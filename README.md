@@ -27,7 +27,7 @@
 ```
     'WeChatServer'    => 'Cooper\Wechat\Facades\WeChatServer',
     'WeChatClient'    => 'Cooper\Wechat\Facades\WeChatClient',
-    
+
 ```
 
 执行 `php artisan config:publish cooper/wechat` ,然后修改 `app/config/packages/cooper/wechat` 中的配置文件 `wechat.php` 。
@@ -82,11 +82,11 @@ Route::any('/weixin',function(){
 
   ```
         Route::any('/weixin',function(){
- 
+
             $text = 'hello laravel';
             $response = WeChatServer::getXml4Txt($text);
             return $response;
-        
+
         });
 
    ```
@@ -102,13 +102,13 @@ Route::any('/weixin',function(){
 
     ```
     $userId = WeChatServer::getFromUserId();
-    
+
     ```
 * getAppId 获取接收到消息的公众账户的id
 
     ```
     $appId = WeChatServer::getAppId();
-    
+
     ```
 
 
@@ -138,15 +138,15 @@ Route::any('/weixin',function(){
 ```
    //通过WeChatServer 获取发送消息的用户的openId
    $userId = WeChatServer::getFromUserId();
-   
+
    //做一些数据处理操作....
    //时间流逝....
    //得到结果
    $text = 'Some results';
-   
+
    //以文本方式发送
    $sendTextMsg =WeChatClient::sendTextMsg($userId,$text);
-   
+
    dd($sendTextMsg);//在实际环境返回布尔值,在debug='true'时返组装好的字符串
 ```
 
@@ -171,7 +171,7 @@ Route::any('/weixin',function(){
 
 * getOAuthConnectUri 用户同意授权，获取code
 * getAccessTokenByCode 通过code换取网页授权access_token
-* refreshAccessTocken 刷新access_token（如果需要）
+* refreshAccessToken 刷新access_token（如果需要）
 * getUserInfoByAuth 拉取用户信息(需scope为 snsapi_userinfo)
 
 生成带参数的二维码
@@ -226,8 +226,8 @@ Url后面添加  `debug=true` 即可跳过验证:
 ```
 
 ##5、环境
-PHP >= 5.4  
-Laravel >= 4.2 
+PHP >= 5.4
+Laravel >= 4.2
 
 ##6、License
 This is free software distributed under the terms of the MIT license

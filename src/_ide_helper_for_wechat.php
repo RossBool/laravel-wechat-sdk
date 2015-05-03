@@ -1,4 +1,4 @@
-<?php 
+<?php
  namespace{
     exit("这个文件是用来为IDE进行解析,请不要具体使用");
 
@@ -173,9 +173,9 @@
             return \Cooper\Wechat\WeChatClient::getAccessTokenByCode($code); //
         }
 
-        public static function refreshAccessTocken($refresh_token)
+        public static function refreshAccessToken($refresh_token)
         {
-            return \Cooper\Wechat\WeChatClient::refreshAccessTocken($refresh_token); //
+            return \Cooper\Wechat\WeChatClient::refreshAccessToken($refresh_token); //
         }
 
         public static function getUserInfoByAuth($access_token, $openid, $lang = 'zh_CN')

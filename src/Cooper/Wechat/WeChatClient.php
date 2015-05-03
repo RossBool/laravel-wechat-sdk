@@ -843,7 +843,7 @@ class WeChatClient {
      *
      * @return mixed
      */
-    public function refreshAccessTocken($refresh_token)
+    public function refreshAccessToken($refresh_token)
     {
         $url = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid={$this->_appid}&grant_type=refresh_token&refresh_token=$refresh_token";
         $res = json_decode(self::get($url), TRUE);
